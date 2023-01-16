@@ -18,7 +18,24 @@
 <body>
 
     <main>
-        
+        <h1>Movies List</h1>
+
+        <ul>
+            @foreach ($movies as $movie)
+                <li class="list-style-none">
+                    <div class="card" style="width: 18rem;">                        
+                        <div class="card-body">
+                            <h3 class="card-title">{{ $movie->title }}</h3>
+                            <h5 class="card-text">{{$movie->original_title}}</h5>
+                            <span>{{$movie->nationality}}</span>
+                            <p>{{$movie->date}}</p>
+                            <span>{{$movie->vote}}</span>
+                        </div>
+                    </div>
+                </li>
+            @endforeach
+        </ul>
+        @dd($movies)
     </main>
 
 </body>
